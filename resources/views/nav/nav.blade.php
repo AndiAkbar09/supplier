@@ -11,10 +11,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item font-weight-bold">
-                            <a href="" class="nav-link">Data Barang</a>
+                            <a href="{{route('data.stock')}}" class="nav-link">Data Barang</a>
                         </li>
                         <li class="nav-item font-weight-bold">
-                            <a href="" class="nav-link">Data Keluar</a>
+                            <a href="{{route('data.pengeluaran')}}" class="nav-link">Data Keluar</a>
                         </li>
                         <li class="nav-item font-weight-bold">
                             <a href="{{route('data.pemasukan')}}" class="nav-link">Data Masuk</a>
@@ -23,7 +23,7 @@
                             <a href="" class="nav-link">Laporan</a>
                         </li>
                         <li class="nav-item font-weight-bold">
-                            <a href="" class="nav-link">Data User</a>
+                            <a href="" class="nav-link">User</a>
                         </li>
                     </ul>
 

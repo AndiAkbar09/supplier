@@ -20,25 +20,21 @@
                             <tr>
                                 <td>Kode Barang</td>
                                 <td>Nama Barang</td>
-                                <td>Nama Perusaaan</td>
                                 <td>Harga</td>
                                 <td>Alamat</td>
-                                <td>Tanggal</td>
                                 <td>Option</td>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($incomes as $in)
                             <tr>
-                                <td>{{$in->kode_barang}}</td>
-                                <td>{{$in->nama_barang}}</td>
-                                <td>{{$in->pt_membeli}}</td>
-                                <td>{{$in->harga_beli}}</td>
-                                <td>{{$in->alamat}}</td>
-                                <td>{{$in->tanggal}}</td>
+                                <td>{{$in->code}}</td>
+                                <td>{{$in->name}}</td>
+                                <td>{{$in->price}}</td>
+                                <td>{{$in->address}}</td>
                                 <td>
-                                    <button type="submit" class="btn btn-success">Show</button>
-                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                    <button type="submit" class="btn btn-outline-success">Show</button>
+                                    <button type="submit" class="btn btn-outline-danger">Delete</button>
                                 </td>
                             </tr>
                             @endforeach

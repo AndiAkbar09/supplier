@@ -15,15 +15,13 @@ class CreateIncomesTable extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_barang')->unique();
-            $table->string('nama_barang');
-            $table->string('harga_beli');
-            $table->string('pt_membeli');
-            $table->string('pt_menjual');
-            $table->string('jumlah_barang');
-            $table->string('alamat');
-            $table->string('tanggal');
-            $table->string('informasi');
+            $table->string('code')->unique();
+            $table->string('name');
+            $table->string('a_n');
+            $table->string('price');
+            $table->string('stock');
+            $table->string('address');
+            $table->string('information');
             $table->timestamps();
         });
     }

@@ -2,28 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Income;
+use App\Expenditure;
 use Illuminate\Http\Request;
 
-class IncomeController extends Controller
+class ExpenditureController extends Controller
 {
-    public function __construct()
-
-    {
-        $this->income = new Income();
-    }
-
     public function index()
     {
-        $incomes = Income::all();
-        return view('data.pemasukan.index', compact('incomes'));
+        $expenditures = Expenditure::all();
+        return view('data.pengeluaran.index', compact('expenditures'));
     }
 
     public function create()
     {
-        return view('data.pemasukan.create');
+        return view('data.pengeluaran.create');
     }
-
+    
     public function store(Request $request)
     {
         $this->validate($request,[
@@ -35,7 +29,7 @@ class IncomeController extends Controller
             'information'   => 'required',
         ]);
 
-        $income = Income::create([
+        $expenditure = Expenditure::create([
             'name'          => $request->name,
             'a_n'           => $request->a_n,
             'price'         => $request->price,
@@ -44,7 +38,7 @@ class IncomeController extends Controller
             'information'   => $request->information,
         ]);
 
-        $income->save();
-        return redirect()->back()->with(['success' => 'Penambahan barang berhasil.... ']);
+        $expenditure->save();
+        return redirect()->back()->with(['success' => 'Barang berhasil dibeli']);
     }
 }

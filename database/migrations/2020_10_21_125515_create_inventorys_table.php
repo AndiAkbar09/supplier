@@ -15,11 +15,9 @@ class CreateInventorysTable extends Migration
     {
         Schema::create('inventorys', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_barang')->unique();
-            $table->string('nama_barang');
+            $table->string('code')->unique();
+            $table->string('name');
             $table->string('stock');
-            $table->string('tanggal');
-            $table->string('kualitas');
             $table->timestamps();
         });
     }

@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,11 +8,11 @@
         <div class="col-md-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="{{route('data.simpan')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('simpan.data-stock')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @if(session('success'))
                             <div class="alert alert-success">
-                                {{ session('success')}}
+                                {{session('success')}}
                             </div>
                         @endif
                         <div class="row">
@@ -24,32 +25,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Atas Nama</label>
-                                    <input type="text" name="a_n" class="form-control" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Alamat</label>
-                                    <input type="text" name="address" class="form-control" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
                                     <label for="">Jumlah Barang</label>
                                     <input type="number" name="stock" class="form-control" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Harga Beli</label>
-                                    <input type="text" name="price" class="form-control" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="">Informasi</label>
-                                    <textarea name="information" id="" class="form-control"></textarea> 
                                 </div>
                             </div>
                         </div>
@@ -58,7 +35,7 @@
                             <div>
                                 <button type="submit" class="btn btn-success">Save</button>
                                 <button type="submit" class="btn btn-warning">Cancel</button>
-                                <a href="{{route('data.pemasukan')}}" class="btn btn-secondary">Back</a>
+                                <a href="{{route('data.stock')}}" class="btn btn-secondary">Back</a>
                             </div>
                         </div>
 

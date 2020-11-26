@@ -7,7 +7,7 @@
         <div class="col-md-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="{{route('data.simpan')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('proses.data-keluar')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @if(session('success'))
                             <div class="alert alert-success">
@@ -58,7 +58,7 @@
                             <div>
                                 <button type="submit" class="btn btn-success">Save</button>
                                 <button type="submit" class="btn btn-warning">Cancel</button>
-                                <a href="{{route('data.pemasukan')}}" class="btn btn-secondary">Back</a>
+                                <a href="{{route('data.pengeluaran')}}" class="btn btn-secondary">Back</a>
                             </div>
                         </div>
 

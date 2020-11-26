@@ -5,14 +5,13 @@ namespace App;
 use Alfa6661\AutoNumber\AutoNumberTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Income extends Model
+class Inventory extends Model
 {
-    use AutoNumberTrait;
+    use AutoNumberTrait; 
 
-    protected $table = 'incomes';
+    protected $table = 'inventorys';
     protected $guarded = [];
-
-
+    
     public function getAutoNumberOptions()
     {
         return [

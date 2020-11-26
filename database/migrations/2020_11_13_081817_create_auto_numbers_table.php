@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateExpendituresTable extends Migration
+class CreateAutoNumbersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateExpendituresTable extends Migration
      */
     public function up()
     {
-        Schema::create('expenditures', function (Blueprint $table) {
+        Schema::create('auto_numbers', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->unique();
-            $table->string('name');
-            $table->string('a_n');
-            $table->string('price');
-            $table->string('stock');
-            $table->string('address');
-            $table->string('information');
+            $table->string('name', 32);
+            $table->integer('number');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateExpendituresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('expenditures');
+        Schema::dropIfExists('auto_numbers');
     }
 }
