@@ -10,16 +10,16 @@
             <div class="card border-0 shadow">
                 <div class="card-body">
                     <div class="px-4 pt-4">
-                        <h3 class="font-weight-bolder">Data Barang</h3>
+                        <h3 class="font-weight-bold">Data Barang</h3>
                     </div>
                     <div class="pt-4">
-                        <table class="table table-stripped table-dark">
+                        <table class="table table-striped table-dark">
                             <thead>
                                 <tr>
-                                    <th>Kode Barang</th>
-                                    <th>Nama Barang</th>
-                                    <th>Jumlah Barang</th>
-                                    <th>ACTION</th>
+                                    <td>Kode Barang</td>
+                                    <td>Nama Barang</td>
+                                    <td>Jumlah Barang</td>
+                                    <td>ACTION</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -29,10 +29,14 @@
                                     <td>{{$in->name}}</td>
                                     <td>{{$in->stock}}</td>
                                     <td>
-                                        <button type="submit" class="btn btn-outline-primary">Edit</button>
-                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
-                                        <a href="{{route('data.keluar')}}" type="submit" class="btn btn-outline-success">Buy</a>
-                                    </td>
+                                        <form action="{{route('delete.data-stock', $in->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                            <a href="{{route('edit.data-stock', $in->id)}}" type="submit" class="btn btn-outline-primary">Edit</a>
+                                            <a href="{{route('data.keluar')}}" type="submit" class="btn btn-outline-success">Buy</a>
+                                        </form>
+                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>

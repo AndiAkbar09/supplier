@@ -47,4 +47,6 @@ class IncomeController extends Controller
         $income->save();
         return redirect()->back()->with(['success' => 'Penambahan barang berhasil.... ']);
     }
+
+    
 }

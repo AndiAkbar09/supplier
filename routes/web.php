@@ -37,7 +37,10 @@ Route::group(['prefix' => 'data'], function(){
 // stock data barang
 
 Route::group(['prefix'=>'inventory'], function(){
-    Route::get('tampilan-stock', 'InventoryController@index')->name('data.stock');
-    Route::get('isi-stock', 'InventoryController@create')->name('isi.data-stock');
-    Route::post('simpan-stock', 'InventoryController@store')->name('simpan.data-stock');
+    Route::get('tampilan.data-stock', 'InventoryController@index')->name('data.stock');
+    Route::get('isi.data-stock', 'InventoryController@create')->name('isi.data-stock');
+    Route::post('simpan.data-stock', 'InventoryController@store')->name('simpan.data-stock');
+    Route::get('ubah.isi-data-stock/{inventory}', 'InventoryController@edit')->name('edit.data-stock');
+    Route::patch('update.data-stock/{inventory}', 'InventoryController@update')->name('update.data-stock');
+    Route::delete('hapus.data-stock/{inventory}', 'InventoryController@destroy')->name('delete.data-stock');
 });

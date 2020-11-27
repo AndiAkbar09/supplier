@@ -16,6 +16,7 @@
                                     <td>Kode Barang</td>
                                     <td>Nama Barang</td>
                                     <td>Harga</td>
+                                    <td>Jumlah</td>
                                     <td>Alamat</td>
                                     <td>Option</td>
                                 </tr>
@@ -26,10 +27,11 @@
                                     <td>{{$exp->code}}</td>
                                     <td>{{$exp->name}}</td>
                                     <td>{{$exp->price}}</td>
+                                    <td>{{$exp->stock}}</td>
                                     <td>{{$exp->address}}</td>
                                     <td>
-                                        <button type="submit" class="btn btn-outline-success">Lihat</button>
-                                        <button type="submit" class="btn btn-outline-danger">Hapus</button>
+                                        <button type="submit" class="btn btn-outline-success">Show</button>
+                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
                                     </td>
                                 </tr>
                                 @endforeach
