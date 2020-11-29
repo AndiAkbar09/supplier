@@ -20,7 +20,7 @@
                             <tr>
                                 <td>Kode Barang</td>
                                 <td>Nama Barang</td>
-                                <td>Harga</td>
+                                <td>Atas Nama</td>
                                 <td>Jumlah</td>
                                 <td>Alamat</td>
                                 <td>Option</td>
@@ -31,7 +31,7 @@
                             <tr>
                                 <td>{{$in->code}}</td>
                                 <td>{{$in->name}}</td>
-                                <td>{{$in->price}}</td>
+                                <td>{{$in->a_n}}</td>
                                 <td>{{$in->stock}}</td>
                                 <td>{{$in->address}}</td>
                                 <td>

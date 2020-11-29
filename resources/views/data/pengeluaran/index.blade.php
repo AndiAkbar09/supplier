@@ -15,7 +15,7 @@
                                 <tr>
                                     <td>Kode Barang</td>
                                     <td>Nama Barang</td>
-                                    <td>Harga</td>
+                                    <td>Atas Nama</td>
                                     <td>Jumlah</td>
                                     <td>Alamat</td>
                                     <td>Option</td>
@@ -26,12 +26,16 @@
                                 <tr>
                                     <td>{{$exp->code}}</td>
                                     <td>{{$exp->name}}</td>
-                                    <td>{{$exp->price}}</td>
+                                    <td>{{$exp->a_n}}</td>
                                     <td>{{$exp->stock}}</td>
                                     <td>{{$exp->address}}</td>
                                     <td>
-                                        <button type="submit" class="btn btn-outline-success">Show</button>
-                                        <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        <form action="{{route('hapus.data-keluar', $exp->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                            <a href="{{route('lihat.data-keluar', $exp->id)}}" type="submit" class="btn btn-outline-success">Show</a>
+                                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

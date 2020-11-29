@@ -41,4 +41,19 @@ class ExpenditureController extends Controller
         $expenditure->save();
         return redirect()->back()->with(['success' => 'Barang berhasil dibeli']);
     }
+
+    public function show($id)
+    {
+        $expenditure = Expenditure::find($id);
+        return view('data.pengeluaran.show', compact('expenditure'));
+    }
+
+    public function destroy($id)
+    {
+        $expenditure = Expenditure::find($id);
+
+        $expenditure->delete($expenditure->all());
+
+        return redirect()->back();
+    }
 }

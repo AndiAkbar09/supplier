@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Income;
 use App\Inventory;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,8 @@ class InventoryController extends Controller
     public function index()
     {
         $inventorys = Inventory::all();
-        return view('data.stock.index', compact('inventorys'));
+        $incomes = Income::all();
+        return view('data.stock.index', compact('inventorys', 'incomes'));
     }
 
     public function create()
@@ -42,24 +44,24 @@ class InventoryController extends Controller
 
     public function edit($id)
     {
-        $inventory = Inventory::find($id);
-        return view('data.stock.edit', compact('inventory'));
+        $income = Income::find($id);
+        return view('data.stock.edit', compact('income'));
     }
 
     public function update(Request $request, $id)
     {
-        $inventory = Inventory::find($id);
+        $income = Income::find($id);
 
-        $inventory->update($request->all());
+        $income->update($request->all());
 
         return redirect()->back()->with(['success' => 'Data Berhasil Diubah']);
     }
     
     public function destroy($id)
     {
-        $inventory = Inventory::find($id);
+        $income = Income::find($id);
 
-        $inventory->delete($inventory->all());
+        $income->delete($income->all());
 
         return redirect()->back();
     }

@@ -8,7 +8,7 @@
         <div class="col-md-8">
             <div class="card border-0 shadow">
                 <div class="card-body">
-                    <form action="{{route('update.data-stock', $inventory->id)}}" method="post" enctype="multipart/form-data">
+                    <form action="{{route('update.data-stock', $income->id)}}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')
                         @if(session('success'))
@@ -21,13 +21,13 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Nama Barang</label>
-                                    <input type="text" name="name" class="form-control" value="{{$inventory->name}}" id="">
+                                    <input type="text" name="name" class="form-control" value="{{$income->name}}" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Jumlah Barang</label>
-                                    <input type="number" name="stock" class="form-control" value="{{$inventory->stock}}" id="">
+                                    <input type="number" name="stock" class="form-control" value="{{$income->stock}}" id="">
                                 </div>
                             </div>
                         </div>

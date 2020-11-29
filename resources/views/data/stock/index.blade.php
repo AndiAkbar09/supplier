@@ -4,9 +4,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="mb-3">
-                <a href="{{route('isi.data-stock')}}" class="btn btn-outline-primary">Tambah Barang</a>
-            </div>
             <div class="card border-0 shadow">
                 <div class="card-body">
                     <div class="px-4 pt-4">
@@ -19,11 +16,11 @@
                                     <td>Kode Barang</td>
                                     <td>Nama Barang</td>
                                     <td>Jumlah Barang</td>
-                                    <td>ACTION</td>
+                                    <td>Option</td>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($inventorys as $in)
+                                @foreach($incomes as $in)
                                 <tr>
                                     <td>{{$in->code}}</td>
                                     <td>{{$in->name}}</td>
